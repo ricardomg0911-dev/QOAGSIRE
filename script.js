@@ -133,3 +133,33 @@ formulario.addEventListener("submit", function(evento) {
 
     window.location.href = urlCorreo;
 });
+
+/* =========================
+   5. BOTONES DE SESION
+========================= */
+
+const btnIniciarSesion = document.getElementById("btnIniciarSesion");
+const btnCerrarSesion = document.getElementById("btnCerrarSesion");
+
+function actualizarSesion() {
+    const sesionActiva =
+        sessionStorage.getItem("sesionRiego") === "activa";
+
+    if (btnIniciarSesion && btnCerrarSesion) {
+        btnIniciarSesion.hidden = sesionActiva;
+        btnCerrarSesion.hidden = !sesionActiva;
+    }
+}
+
+actualizarSesion();
+
+// Cerrar sesión
+if (btnCerrarSesion) {
+    btnCerrarSesion.addEventListener("click", function(evento) {
+        evento.preventDefault();
+
+        sessionStorage.removeItem("sesionRiego");
+
+        window.location.href = "index.html";
+    });
+}
