@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Solucion para un mundo mejor, acompañado de nuestro sistema QOAGSIRE">
+
+    <title>QOAGSIRE | Sistema de Riego Inteligente</title>
+
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+        <a href="#inicio" class="logo">
+            QOAG<span>SIRE</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+            aria-label="Abrir menú" aria-expanded="false"
+            aria-controls="navegacion">
+            ☰
+        </button>
+
+        <nav id="navegacion" class="navegacion">
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <a href="#contacto" class="boton boton-header">
+            Hablemos <span>↗</span>
+        </a>
+    </header>
+
+    <!--login-->
+    
+<a href="login.html" class="boton boton-header">
+    Iniciar sesión ↗
+</a>
+
+
+    <main>
+
+        <!-- PORTADA -->
+        <section id="inicio" class="portada">
+            <div class="portada-contenido revelar">
+                <p class="etiqueta">
+                    <span class="punto"></span>
+                    Innocavion Ambiental
+                </p>
+
+                <h1>
+                    Concervamos el futuro
+                    <span>Cuidamos tu mundo</span>
+                </h1>
+
+                <p class="descripcion">
+                    Diseñamos un sistema de riego automatizado para cuidar el mundo de una forma rapida y eficaz,
+                    buscando la facilidad de poder cuidar cada una de nuestras plantas o areas verdes, 
+                    acompañandola de la tecnologia e innovación que nos ayudara a crear un mundo mejor.
+                </p>
+
+                <div class="portada-botones">
+                    <a href="#proyectos" class="boton">
+                        Explorar proyectos <span>↗</span>
+                    </a>
+
+                    <a href="#servicios" class="boton-secundario">
+                        Conocer servicios ↓
+                    </a>
+                </div>
+
+                <div class="portada-datos">
+                    <div>
+                        <strong>01.</strong>
+                        <span>Riego automático</span>
+                    </div>
+
+                    <div>
+                        <strong>02.</strong>
+                        <span>Monitoreo inteligente</span>
+                    </div>
+
+                    <div>
+                        <strong>03.</strong>
+                        <span>Ahorro de agua</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portada-visual revelar">
+                <div class="marco-imagen">
+                    <img
+                        src="https://media.istockphoto.com/id/1500766268/photo/organic-raw-yellow-green-banana-pepper-paprika-chili-red-pepper-plant-or-spanish-sweet-pepper.jpg?s=1024x1024&w=is&k=20&c=n-nh-ItnEfvEACjZOKhyMUg0rPocKzIDNP1ilknoO7Y="
+                        alt="Cuidado Ambiental y tecnología">
+
+                    <div class="etiqueta-imagen">
+                        <span class="punto"></span>
+                        CUIDADO AMBIENTAL
+                    </div>
+                </div>
+
+                <div class="insignia">
+                    <span>QS</span>
+                    <small>ENVIRONMENTAL <br>CARE</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section id="servicios" class="seccion">
+            <div class="seccion-encabezado revelar">
+                <p class="subtitulo">LO QUE HACEMOS</p>
+                <h2>Tecnología para cuidar la vida</span></h2>
+                <p>
+                    Ayudamos a mantener tus plantas saludables mediante un sistema de riego inteligente 
+                    que utiliza tecnología para aprovechar mejor el agua y facilitar su cuidado.
+                </p>
+            </div>
+
+            <div class="servicios-grid">
+
+                <article class="tarjeta-servicio revelar">
+                    <div class="icono-servicio">01</div>
+                    <h3>Riego inteligente</h3>
+                    <p>
+                        Administra el suministro de agua según las necesidades
+                         de las plantas y las condiciones del suelo
+                    </p>
+                    <a href="#contacto">Solicitar servicio ↗</a>
+                </article>
+
+                <article class="tarjeta-servicio revelar">
+                    <div class="icono-servicio">02</div>
+                    <h3>Monitoreo de humedad</h3>
+                    <p>
+                        Permite conocer el nivel de humedad de la tierra
+                        mediante sensores si tu prototipo cuenta con ellos
+                    </p>
+                    <a href="#contacto">Solicitar servicio ↗</a>
+                </article>
+
+                <article class="tarjeta-servicio revelar">
+                    <div class="icono-servicio">03</div>
+                    <h3>Ahorro de agua</h3>
+                    <p>
+                       Busca evitar el riego innecesario y 
+                       promover un uso responsable del agua
+                    </p>
+                    <a href="#contacto">Solicitar servicio ↗</a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- NOSOTROS -->
+        <section id="nosotros" class="seccion nosotros">
+            <div class="nosotros-imagen revelar">
+                <img
+                    src="https://images.openai.com/static-rsc-4/y4ZoapEcRxzy3Zaz5CcUwp2MWsKFgywQ8sJ0XDRWKIO3CwWoBhJLuz4R4KBxwR6VkZf9068sAsBZdP-fmjCdEMvVgfy9eRplDqjEWT0Ustp3DeYEqK6CHjmgQqZOpYCxfe_U4qsqb6WVoMrZc4KodgNaPZKtlYD4nPnSR6OrSpud6HldMy3hx8yqAbGSPt1a?purpose=fullsize"
+                    alt="Equipo trabajando en un proyecto tecnológico">
+
+                <div class="imagen-texto">
+                    <span>IDEAS QUE</span>
+                    <strong>SE HACEN REALIDAD.</strong>
+                </div>
+            </div>
+
+            <div class="nosotros-contenido revelar">
+                <p class="subtitulo">CONOCE NUESTRO PROYECTO</p>
+
+                <h2>Tus plantas, cuidadas de forma inteligente<span>.</span></h2>
+
+                <p>
+                    Nuestro proyecto busca facilitar el cuidado de las 
+                    plantas mediante la automatización del riego y el uso
+                    de tecnología.
+                </p>
+
+                <p>
+                    El sistema está pensado para ayudar a mantener una 
+                    humedad adecuada en la tierra, reducir el trabajo
+                     manual y aprovechar mejor el agua.
+                </p>
+
+                <a href="#contacto" class="boton">
+                    Conoce cómo funciona ↗
+                </a>
+
+                <div class="valores">
+                    <div>
+                        <strong>Automatización</strong>
+                        <span>Reducir la necesidad de regar manualmente.</span>
+                    </div>
+
+                    <div>
+                        <strong>Eficiencia</strong>
+                        <span>Utilizar el agua de manera responsable.</span>
+                    </div>
+
+                    <div>
+                        <strong>Cuidado natural</strong>
+                        <span>Favorecer las condiciones adecuadas para las plantas.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERÍA -->
+        <section id="proyectos" class="seccion proyectos">
+            <div class="seccion-encabezado revelar">
+                <p class="subtitulo">NUESTRO PORTAFOLIO</p>
+                <h2>Ideas convertidas en proyectos<span>.</span></h2>
+                <p>
+                    Una muestra visual de las soluciones 
+                    que podemos crear.
+                </p>
+            </div>
+
+            <div class="galeria-grid">
+
+                <article class="proyecto revelar">
+                    <img
+                        src="https://images.unsplash.com/photo-1584795962384-dce385272216?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+                        alt="Panel de análisis de datos en una computadora">
+
+                    <div class="proyecto-info">
+                        <span>01 / SENSORES</span>
+                        <h3>Medición de humedad</h3>
+                        <p>Identificación de las condiciones del suelo.</p>
+                    </div>
+                </article>
+
+                <article class="proyecto revelar">
+                    <img
+                        src="https://images.openai.com/static-rsc-4/z1ifjXyvnVOhGvXOZei2ZFw0_M53bPoxzUKDZ35w1fDGdtI8jJJ6zKUeqRMXHQ7sBxbQj4J2KkaKjra_r8kSjB2IQbW0focu_udap46n48kshOAqfUznbj3CQNwLtKSnn9oq_-JpwvAPXJpq5F-L1KsLW-cEwXYJDgBHTxNvyf2teF22qUtSO9HZ_J0TIY3A?purpose=fullsize"
+                        alt="Diseño de interfaz de una aplicación">
+
+                    <div class="proyecto-info">
+                        <span>02 / AUTOMATIZACIÓN</span>
+                        <h3>Riego automático</h3>
+                        <p>Suministro de agua cuando sea necesario, según la configuración.</p>
+                    </div>
+                </article>
+
+                <article class="proyecto revelar">
+                    <img
+                        src="https://images.openai.com/static-rsc-4/fBe56Xi8bEjNQ_Nf5MDHjgOpghKB5NxROQwAL27-KJmYs4fmdafgrvT7xjKOcKMCl7g5ajBNZRGPTV-uGKLSqDfB4xz4tvkuZHS9wce1yWqo-c92pj1Esj-y_u2XgZyqH8sGeMRe-tIakl6FjbnlIdH-n4QIBYzxp2i6LThbyRCT92qa7lNK1oxsmc7QO_KV?purpose=fullsize"
+                        alt="Equipo colaborando en un proyecto tecnológico">
+
+                    <div class="proyecto-info">
+                        <span>03 / MONITOREO</span>
+                        <h3>Control del sistema</h3>
+                        <p>Consulta de información y estado del riego, si la plataforma lo permite..</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- LLAMADA A LA ACCIÓN -->
+        <section class="llamada revelar">
+            <p class="subtitulo">¿TIENES UNA IDEA?</p>
+            <h2>Hagámosla realidad<span>.</span></h2>
+            <p>
+                Cuéntanos qué necesitas y exploremos las posibilidades.
+            </p>
+            <a href="#contacto" class="boton">
+                Iniciar un proyecto ↗
+            </a>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="seccion contacto">
+            <div class="contacto-info revelar">
+                <p class="subtitulo">HABLEMOS DE TU PROYECTO</p>
+                <h2>Construyamos algo extraordinario<span>.</span></h2>
+
+                <p>
+                    Completa el formulario y cuéntanos tu idea.
+                    Nos encantará conocer más sobre lo que tienes
+                    en mente.
+                </p>
+
+                <div class="contacto-detalle">
+                    <span class="detalle-icono">@</span>
+                    <div>
+                        <strong>Correo electrónico</strong>
+                        <p>QOAGSIRE@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="contacto-detalle">
+                    <span class="detalle-icono">↗</span>
+                    <div>
+                        <strong>Especialidad</strong>
+                        <p>Sistema QOAGSIRE y Cuidado Ambiental</p>
+                    </div>
+                </div>
+            </div>
+
+            <form id="formularioContacto" class="formulario revelar">
+                <div class="campo">
+                    <label for="nombre">Nombre completo</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="¿Cómo te llamas?"
+                        autocomplete="name"
+                        required>
+                </div>
+
+                <div class="campo">
+                    <label for="correo">Correo electrónico</label>
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        placeholder="tu@correo.com"
+                        autocomplete="email"
+                        required>
+                </div>
+
+                <div class="campo">
+                    <label for="servicio">¿Qué necesitas?</label>
+                    <select id="servicio" name="servicio" required>
+                        <option value="">Selecciona un servicio</option>
+                        <option value="Desarrollo de estructura">Desarrollo de estructura </option>
+                        <option value="Diseños ">Diseños </option>
+                        <option value="Sistemas de riego">Sistemas de riego</option>
+                        <option value="Otro proyecto">Otro proyecto</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="mensaje">Cuéntanos tu idea</label>
+                    <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        rows="5"
+                        placeholder="Describe brevemente tu proyecto..."
+                        required></textarea>
+                </div>
+
+                <button type="submit" class="boton boton-enviar">
+                    Preparar mensaje <span>↗</span>
+                </button>
+
+                <p id="respuesta" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie">
+        <a href="#inicio" class="logo">QOAG<span>SIRE.</span></a>
+
+        <p>
+            © <span id="anio"></span> QOAGSIRE.
+            Tecnología que Cuida tu Ambiente.
+        </p>
+
+        <a href="#inicio" class="volver-arriba">Volver arriba ↑</a>
+    </footer>
+    
+
+</body>
+</html>

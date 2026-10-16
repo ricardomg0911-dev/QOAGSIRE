@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Riego QOAGSIRE</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="panel.css">
+    <script src="panel.js" defer></script>
+</head>
+<body>
+
+    <header class="encabezado">
+        <a href="panel.html" class="logo">QOAG<span> SIRE</span></a>
+
+        <div class="usuario-menu">
+            <span class="estado-conexion">
+                <span class="punto"></span> Sistema de QOAGSIRE
+            </span>
+            <button id="cerrarSesion" class="boton boton-header">
+                Cerrar sesión ↗
+            </button>
+        </div>
+    </header>
+
+    <main class="panel">
+        <section class="bienvenida">
+            <div>
+                <p class="subtitulo">PANEL DE CONTROL</p>
+                <h1>Tu cultivo, bajo control</span></h1>
+                <p>Administra el riego y consulta las condiciones de tu cultivo.</p>
+            </div>
+
+            <div class="reloj">
+                <span>FECHA Y HORA</span>
+                <strong id="fechaHora">--</strong>
+            </div>
+        </section>
+
+        <!-- ESTADO GENERAL -->
+        <section class="estado-general">
+            <div>
+                <span class="texto-secundario">ESTADO DEL SISTEMA</span>
+                <h2 id="estadoSistema">Riego detenido</h2>
+                <p id="textoSistema">El sistema está listo para funcionar.</p>
+            </div>
+
+            <div class="indicador-riego">
+                <span id="iconoGota">💧</span>
+                <span id="etiquetaRiego">INACTIVO</span>
+            </div>
+        </section>
+
+        <!-- SENSORES -->
+        <section class="sensores">
+            <div class="encabezado-seccion">
+                <div>
+                    <p class="subtitulo">LECTURAS AMBIENTALES</p>
+                    <h2>Estado de los sensores</h2>
+                </div>
+
+                <button id="actualizarSensores" class="boton boton-secundario">
+                    Actualizar lecturas ↻
+                </button>
+            </div>
+
+            <div class="sensores-grid">
+                <article class="sensor tarjeta-panel">
+                    <div class="sensor-icono">◉</div>
+                    <p>Humedad del suelo</p>
+                    <strong><span id="humedad">42</span><small>%</small></strong>
+                    <div class="barra">
+                        <div id="barraHumedad" class="barra-valor"></div>
+                    </div>
+                    <span id="estadoHumedad" class="texto-secundario">Nivel adecuado</span>
+                </article>
+
+                <article class="sensor tarjeta-panel">
+                    <div class="sensor-icono">♨</div>
+                    <p>Temperatura</p>
+                    <strong><span id="temperatura">25</span><small> °C</small></strong>
+                    <div class="barra">
+                        <div id="barraTemperatura" class="barra-valor"></div>
+                    </div>
+                    <span class="texto-secundario">Temperatura ambiental</span>
+                </article>
+
+                <article class="sensor tarjeta-panel">
+                    <div class="sensor-icono">▤</div>
+                    <p>Depósito de agua</p>
+                    <strong><span id="nivelAgua">78</span><small>%</small></strong>
+                    <div class="barra">
+                        <div id="barraAgua" class="barra-valor"></div>
+                    </div>
+                    <span id="estadoAgua" class="texto-secundario">Nivel suficiente</span>
+                </article>
+
+                <article class="sensor tarjeta-panel">
+                    <div class="sensor-icono">◷</div>
+                    <p>Consumo de agua</p>
+                    <strong><span id="consumo">0.0</span><small> L</small></strong>
+                    <div class="barra">
+                        <div id="barraConsumo" class="barra-valor"></div>
+                    </div>
+                    <span class="texto-secundario">Consumo simulado de esta sesión</span>
+                </article>
+            </div>
+
+            <p class="aviso-demo">
+                Estas lecturas son de demostración. No proceden de sensores reales.
+            </p>
+        </section>
+
+        <!-- CONTROLES -->
+        <section class="controles">
+            <div class="tarjeta-panel control-principal">
+                <p class="subtitulo">CONTROL DE RIEGO</p>
+                <h2>Administrar sistema</h2>
+                <p class="texto-secundario">
+                    Selecciona cómo quieres administrar el riego.
+                </p>
+
+                <label for="modoRiego">Modo de funcionamiento</label>
+                <select id="modoRiego">
+                    <option value="automatico">Automático</option>
+                    <option value="manual">Manual</option>
+                </select>
+
+                <div class="estado-control">
+                    <div>
+                        <strong>Riego</strong>
+                        <p id="textoControl">Sistema detenido</p>
+                    </div>
+
+                    <button id="botonRiego" class="boton">
+                        Activar riego
+                    </button>
+                </div>
+
+                <div class="nota-control" id="notaControl">
+                    En modo automático, el riego se activa cuando
+                    la humedad simulada es inferior al 35%.
+                </div>
+            </div>
+
+            <div class="tarjeta-panel historial">
+                <p class="subtitulo">ACTIVIDAD</p>
+                <h2>Historial del sistema</h2>
+                <div id="listaHistorial" class="lista-historial">
+                    <p class="historial-vacio">Esperando actividad...</p>
+                </div>
+                <button id="limpiarHistorial" class="boton boton-secundario">
+                    Limpiar historial
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <a href="panel.html" class="logo">QOAG<span> SIRE</span></a>
+        <p>Control de recursos hídricos</p>
+        <a href="index.html" class="volver-arriba">Página principal ↑</a>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,967 @@
+
+/* =========================
+   1. CONFIGURACION GENERAL
+========================= */
+
+:root {
+    --fondo: #090909;
+    --fondo-secundario: #111111;
+    --tarjeta: #151515;
+    --dorado: #d6b46a;
+    --dorado-claro: #f0d99c;
+    --blanco: #f7f5f0;
+    --gris: #a5a5a5;
+    --borde: #292929;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--fondo);
+    color: var(--blanco);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+::selection {
+    background: var(--dorado);
+    color: #090909;
+}
+
+/* =========================
+   2. ENCABEZADO
+========================= */
+
+.encabezado {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding: 18px 7%;
+    background: rgba(9, 9, 9, 0.92);
+    border-bottom: 1px solid var(--borde);
+    backdrop-filter: blur(16px);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 850;
+    letter-spacing: -1px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--dorado);
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navegacion a {
+    color: #c6c6c6;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.navegacion a:hover {
+    color: var(--dorado);
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    color: var(--dorado);
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* =========================
+   3. BOTONES
+========================= */
+
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 13px 23px;
+    background: var(--dorado);
+    color: #111111;
+    border: 1px solid var(--dorado);
+    border-radius: 5px;
+    font-weight: 750;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s,
+                box-shadow 0.3s;
+}
+
+.boton:hover {
+    background: var(--dorado-claro);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px #d6b46a20;
+}
+
+.boton-secundario {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--blanco);
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.boton-secundario:hover {
+    color: var(--dorado);
+}
+
+.boton-header {
+    padding: 10px 18px;
+}
+
+/* =========================
+   4. PORTADA
+========================= */
+
+.portada {
+    min-height: 630px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 55px;
+    padding: 85px 8%;
+    background:
+        radial-gradient(
+            ellipse at 85% 40%,
+            #9a77321c,
+            transparent 45%
+        ),
+        var(--fondo);
+}
+
+.etiqueta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    color: var(--dorado);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.punto {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    flex-shrink: 0;
+    background: var(--dorado);
+    border-radius: 50%;
+    box-shadow: 0 0 12px #d6b46a70;
+}
+
+.portada h1 {
+    max-width: 720px;
+    font-size: clamp(40px, 5.3vw, 68px);
+    line-height: 1.12;
+    letter-spacing: -2px;
+    font-weight: 800;
+}
+
+.portada h1 span {
+    display: block;
+    color: var(--dorado);
+}
+
+.descripcion {
+    max-width: 520px;
+    margin-top: 24px;
+    color: var(--gris);
+    font-size: 17px;
+}
+
+.portada-botones {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.portada-datos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 55px;
+    padding-top: 25px;
+    border-top: 1px solid var(--borde);
+}
+
+.portada-datos div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.portada-datos strong {
+    color: var(--dorado);
+    font-size: 17px;
+}
+
+.portada-datos span {
+    color: var(--gris);
+    font-size: 12px;
+}
+
+/* Imagen principal */
+
+.portada-visual {
+    position: relative;
+    padding: 15px;
+}
+
+.marco-imagen {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #d6b46a40;
+    border-radius: 5px;
+}
+
+.marco-imagen img {
+    height: 430px;
+    filter: brightness(0.8);
+    transition: transform 0.8s;
+}
+
+.marco-imagen:hover img {
+    transform: scale(1.06);
+}
+
+.etiqueta-imagen {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    background: #090909d9;
+    border: 1px solid #ffffff20;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+.insignia {
+    position: absolute;
+    right: -5px;
+    top: 45px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    background: var(--dorado);
+    color: #111111;
+    box-shadow: 0 10px 30px #00000040;
+}
+
+.insignia span {
+    font-size: 26px;
+    font-weight: 900;
+}
+
+.insignia small {
+    font-size: 9px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+/* =========================
+   5. SECCIONES
+========================= */
+
+.seccion {
+    padding: 100px 8%;
+}
+
+.seccion-encabezado {
+    max-width: 750px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.subtitulo {
+    color: var(--dorado);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    margin-bottom: 13px;
+}
+
+.seccion h2,
+.nosotros h2,
+.contacto h2,
+.llamada h2 {
+    font-size: clamp(29px, 4vw, 43px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.seccion h2 span,
+.nosotros h2 span,
+.contacto h2 span,
+.llamada h2 span {
+    color: var(--dorado);
+}
+
+.seccion-encabezado > p:last-child {
+    max-width: 600px;
+    margin: 15px auto 0;
+    color: var(--gris);
+    font-size: 15px;
+}
+
+/* =========================
+   6. SERVICIOS
+========================= */
+
+#servicios {
+    background: var(--fondo-secundario);
+    border-top: 1px solid var(--borde);
+    border-bottom: 1px solid var(--borde);
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.tarjeta-servicio {
+    padding: 30px;
+    background: var(--tarjeta);
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    transition: border-color 0.3s, transform 0.3s,
+                background 0.3s;
+}
+
+.tarjeta-servicio:hover {
+    transform: translateY(-7px);
+    border-color: #d6b46a80;
+    background: #1a1916;
+}
+
+.icono-servicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 25px;
+    color: var(--dorado);
+    border: 1px solid #d6b46a65;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.tarjeta-servicio h3 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.tarjeta-servicio p {
+    min-height: 78px;
+    color: var(--gris);
+    font-size: 14px;
+}
+
+.tarjeta-servicio a {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--dorado);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* =========================
+   7. NOSOTROS
+========================= */
+
+.nosotros {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.nosotros-imagen {
+    position: relative;
+}
+
+.nosotros-imagen img {
+    height: 470px;
+    border-radius: 5px;
+    filter: brightness(0.75);
+}
+
+.imagen-texto {
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px;
+    background: #090909dd;
+    border-left: 3px solid var(--dorado);
+}
+
+.imagen-texto span {
+    color: var(--gris);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.imagen-texto strong {
+    font-size: 16px;
+}
+
+.nosotros-contenido > p:not(.subtitulo) {
+    margin-top: 20px;
+    color: var(--gris);
+    font-size: 14px;
+}
+
+.nosotros-contenido > .boton {
+    margin-top: 28px;
+}
+
+.valores {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid var(--borde);
+}
+
+.valores div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.valores strong {
+    font-size: 13px;
+}
+
+.valores span {
+    color: var(--gris);
+    font-size: 11px;
+}
+
+/* =========================
+   8. GALERIA
+========================= */
+
+.proyectos {
+    background: var(--fondo-secundario);
+    border-top: 1px solid var(--borde);
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.proyecto {
+    overflow: hidden;
+    background: var(--tarjeta);
+    border: 1px solid var(--borde);
+    border-radius: 5px;
+    transition: transform 0.35s, border-color 0.35s;
+}
+
+.proyecto:hover {
+    transform: translateY(-6px);
+    border-color: var(--dorado);
+}
+
+.proyecto img {
+    height: 240px;
+    filter: brightness(0.75) grayscale(20%);
+    transition: transform 0.6s, filter 0.6s;
+}
+
+.proyecto:hover img {
+    transform: scale(1.06);
+    filter: brightness(0.95) grayscale(0%);
+}
+
+.proyecto-info {
+    position: relative;
+    z-index: 1;
+    padding: 24px;
+    background: var(--tarjeta);
+}
+
+.proyecto-info span {
+    color: var(--dorado);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+.proyecto-info h3 {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.proyecto-info p {
+    margin-top: 5px;
+    color: var(--gris);
+    font-size: 13px;
+}
+
+/* =========================
+   9. LLAMADA A LA ACCION
+========================= */
+
+.llamada {
+    padding: 85px 8%;
+    text-align: center;
+    border-top: 1px solid var(--borde);
+    border-bottom: 1px solid var(--borde);
+    background:
+        radial-gradient(
+            ellipse at center,
+            #d6b46a12,
+            transparent 65%
+        );
+}
+
+.llamada > p:not(.subtitulo) {
+    margin: 15px 0 25px;
+    color: var(--gris);
+}
+
+/* =========================
+   10. CONTACTO
+========================= */
+
+.contacto {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: start;
+    gap: 70px;
+}
+
+.contacto-info > p:not(.subtitulo) {
+    margin-top: 20px;
+    color: var(--gris);
+    font-size: 14px;
+}
+
+.contacto-detalle {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.detalle-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    color: var(--dorado);
+    border: 1px solid #d6b46a55;
+    font-size: 20px;
+}
+
+.contacto-detalle strong {
+    font-size: 13px;
+}
+
+.contacto-detalle p {
+    color: var(--gris);
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.formulario {
+    padding: 32px;
+    background: var(--tarjeta);
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.campo label {
+    color: #e7e4dd;
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+    width: 100%;
+    padding: 13px 14px;
+    background: #0c0c0c;
+    color: var(--blanco);
+    border: 1px solid #333333;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #777777;
+}
+
+.campo select {
+    color-scheme: dark;
+}
+
+.campo input:focus,
+.campo textarea:focus,
+.campo select:focus {
+    border-color: var(--dorado);
+    box-shadow: 0 0 0 3px #d6b46a15;
+}
+
+.campo textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.boton-enviar {
+    width: 100%;
+}
+
+#respuesta {
+    margin-top: 15px;
+    color: var(--dorado-claro);
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+/* =========================
+   11. PIE DE PAGINA
+========================= */
+
+.pie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 28px 8%;
+    background: #050505;
+    border-top: 1px solid var(--borde);
+}
+
+.pie .logo {
+    font-size: 20px;
+}
+
+.pie p,
+.volver-arriba {
+    color: var(--gris);
+    font-size: 12px;
+}
+
+.volver-arriba:hover {
+    color: var(--dorado);
+}
+
+/* =========================
+   12. ANIMACIONES
+========================= */
+
+.revelar {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.revelar.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.portada-visual {
+    animation: entradaImagen 1s ease both;
+}
+
+.insignia {
+    animation: flotar 4s ease-in-out infinite;
+}
+
+@keyframes entradaImagen {
+    from {
+        opacity: 0;
+        transform: translateX(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* =========================
+   13. DISEÑO RESPONSIVO
+========================= */
+
+@media (max-width: 1050px) {
+    .encabezado {
+        padding-left: 4%;
+        padding-right: 4%;
+        gap: 15px;
+    }
+
+    .navegacion {
+        gap: 15px;
+    }
+
+    .portada,
+    .nosotros,
+    .contacto {
+        gap: 35px;
+    }
+
+    .portada {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .seccion {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+@media (max-width: 780px) {
+    .encabezado {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 2;
+        margin-left: auto;
+    }
+
+    .boton-header {
+        display: none;
+    }
+
+    .navegacion {
+        display: none;
+        order: 3;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .navegacion.abierto {
+        display: flex;
+    }
+
+    .navegacion a {
+        padding: 12px 0;
+        border-top: 1px solid var(--borde);
+    }
+
+    .portada {
+        grid-template-columns: 1fr;
+        padding: 70px 7%;
+    }
+
+    .portada-visual {
+        max-width: 550px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .marco-imagen img {
+        height: 350px;
+    }
+
+    .servicios-grid,
+    .galeria-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .nosotros,
+    .contacto {
+        grid-template-columns: 1fr;
+    }
+
+    .nosotros-imagen img {
+        height: 380px;
+    }
+
+    .contacto {
+        gap: 35px;
+    }
+
+    .tarjeta-servicio p {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 520px) {
+    .logo {
+        font-size: 22px;
+    }
+
+    .portada {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .portada h1 {
+        font-size: 42px;
+        letter-spacing: -1.5px;
+    }
+
+    .descripcion {
+        font-size: 15px;
+    }
+
+    .portada-datos {
+        gap: 18px;
+    }
+
+    .portada-datos div {
+        flex: 1 1 100px;
+    }
+
+    .portada-visual {
+        padding: 8px;
+    }
+
+    .marco-imagen img {
+        height: 290px;
+    }
+
+    .insignia {
+        right: -4px;
+        top: 25px;
+    }
+
+    .seccion {
+        padding: 70px 6%;
+    }
+
+    .servicios-grid,
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .proyecto img {
+        height: 230px;
+    }
+
+    .nosotros-imagen img {
+        height: 300px;
+    }
+
+    .valores {
+        gap: 10px;
+    }
+
+    .valores strong {
+        font-size: 11px;
+    }
+
+    .valores span {
+        font-size: 10px;
+    }
+
+    .formulario {
+        padding: 22px 17px;
+    }
+
+    .llamada {
+        padding: 65px 6%;
+    }
+
+    .pie {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Accesibilidad: reducir movimiento si el usuario lo prefiere */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .revelar {
+        opacity: 1;
+        transform: none;
+    }
+}
