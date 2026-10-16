@@ -82,12 +82,15 @@ function registrarEvento(titulo, detalle) {
    5. ACTUALIZAR INTERFAZ
 ========================= */
 
+
 function actualizarInterfaz() {
+    // Mostrar lecturas
     document.getElementById("humedad").textContent = humedad;
     document.getElementById("temperatura").textContent = temperatura;
     document.getElementById("nivelAgua").textContent = nivelAgua;
     document.getElementById("consumo").textContent = consumo.toFixed(1);
 
+    // Actualizar barras
     document.getElementById("barraHumedad").style.width =
         humedad + "%";
 
@@ -100,35 +103,133 @@ function actualizarInterfaz() {
     document.getElementById("barraConsumo").style.width =
         Math.min(consumo / 20 * 100, 100) + "%";
 
+    // Escala de colores de humedad
+    let colorHumedad;
+    let textoHumedad;
+
+    if (humedad < 30) {
+        colorHumedad = "#ef5350";
+        textoHumedad = "Suelo seco";
+    } else if (humedad < 40) {
+        colorHumedad = "#ffb74d";
+        textoHumedad = "Humedad baja";
+    } else if (humedad <= 70) {
+        colorHumedad = "#66bb6a";
+        textoHumedad = "Humedad adecuada";
+    } else {
+        colorHumedad = "#42bde8";
+        textoHumedad = "Exceso de humedad";
+    }
+
+    document.getElementById("barraHumedad")
+        .style.setProperty("--color-sensor", colorHumedad);
+
+    document.getElementById("estadoHumedad").style.color =
+        colorHumedad;
+
     document.getElementById("estadoHumedad").textContent =
-        humedad < 35 ? "Suelo seco" :
-        humedad < 70 ? "Humedad adecuada" :
-        "Humedad elevada";
+        textoHumedad;
 
-    document.getElementById("estadoAgua").textContent =
-        nivelAgua < 20 ? "Depósito bajo" :
-        "Nivel suficiente";
+    document.getElementById("barraHumedad").style.background =
+        colorHumedad;
 
-    estadoSistema.textContent =
+    // Escala de colores de temperatura
+    let colorTemperatura;
+    let textoTemperatura;
+
+    if (temperatura < 15) {
+        colorTemperatura = "#42bde8";
+        textoTemperatura = "Temperatura fría";
+    } else if (temperatura <= 28) {
+        colorTemperatura = "#66bb6a";
+        textoTemperatura = "Temperatura normal";
+    } else if (temperatura <= 35) {
+        colorTemperatura = "#ff9f43";
+        textoTemperatura = "Temperatura alta";
+    } else {
+        colorTemperatura = "#ef5350";
+        textoTemperatura = "Temperatura muy alta";
+    }
+
+    document.getElementById("barraTemperatura")
+        .style.background = colorTemperatura;
+
+    document.getElementById("barraTemperatura")
+        .style.boxShadow = "0 0 10px " + colorTemperatura;
+
+    document.getElementById("estadoTemperatura").style.color =
+        colorTemperatura;
+
+    document.getElementById("estadoTemperatura").textContent =
+        textoTemperatura;
+
+    // Simulación visual del depósito
+    const aguaVisual = document.getElementById("aguaVisual");
+
+    aguaVisual.style.height = nivelAgua + "%";
+
+    document.getElementById("porcentajeDeposito").textContent =
+        nivelAgua + "%";
+
+    let colorAgua;
+
+    if (nivelAgua < 20) {
+        colorAgua = "#e45b52";
+        document.getElementById("estadoAgua").textContent =
+            "Nivel crítico";
+    } else if (nivelAgua < 45) {
+        colorAgua = "#ffb74d";
+        document.getElementById("estadoAgua").textContent =
+            "Nivel bajo";
+    } else {
+        colorAgua = "#52c9e8";
+        document.getElementById("estadoAgua").textContent =
+            "Nivel suficiente";
+    }
+
+    aguaVisual.style.background =
+        "linear-gradient(180deg, " + colorAgua +
+        ", #07547d)";
+
+    document.getElementById("barraAgua").style.background =
+        colorAgua;
+
+    document.getElementById("estadoAgua").style.color =
+        colorAgua;
+
+    // Estado del riego
+    document.getElementById("estadoSistema").textContent =
         riegoActivo ? "Riego en funcionamiento" : "Riego detenido";
 
-    textoSistema.textContent = riegoActivo
-        ? "El sistema de demostración está regando."
-        : "El sistema está listo para funcionar.";
+    document.getElementById("textoSistema").textContent =
+        riegoActivo
+            ? "El sistema de demostración está regando."
+            : "El sistema está listo para funcionar.";
 
-    textoControl.textContent =
+    document.getElementById("textoControl").textContent =
         riegoActivo ? "Riego activado" : "Sistema detenido";
 
-    etiquetaRiego.textContent =
+    document.getElementById("etiquetaRiego").textContent =
         riegoActivo ? "ACTIVO" : "INACTIVO";
 
-    iconoGota.textContent = riegoActivo ? "💧" : "◌";
+    document.getElementById("iconoGota").textContent =
+        riegoActivo ? "💧" : "◌";
 
-    indicadorRiego.classList.toggle("activo", riegoActivo);
+    document.querySelector(".indicador-riego")
+        .classList.toggle("activo", riegoActivo);
 
-    botonRiego.textContent =
+    document.getElementById("botonRiego").textContent =
         riegoActivo ? "Detener riego" : "Activar riego";
 
+    document.getElementById("botonRiego").disabled =
+        modoRiego.value === "automatico";
+
+    document.getElementById("notaControl").textContent =
+        modoRiego.value === "automatico"
+            ? "Modo automático: el riego se activa con humedad inferior al 35% y se detiene al llegar al 60%."
+            : "Modo manual: activa o detén el riego con el botón. Las lecturas son simuladas.";
+}
+{
     // El control manual solo funciona en modo manual.
     botonRiego.disabled = modoRiego.value === "automatico";
 
