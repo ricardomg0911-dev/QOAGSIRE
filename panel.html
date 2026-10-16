@@ -66,35 +66,73 @@
             </div>
 
             <div class="sensores-grid">
-                <article class="sensor tarjeta-panel">
-                    <div class="sensor-icono">◉</div>
-                    <p>Humedad del suelo</p>
-                    <strong><span id="humedad">42</span><small>%</small></strong>
-                    <div class="barra">
-                        <div id="barraHumedad" class="barra-valor"></div>
-                    </div>
-                    <span id="estadoHumedad" class="texto-secundario">Nivel adecuado</span>
-                </article>
+                
+           <article class="sensor tarjeta-panel">
+           <div class="sensor-icono">◉</div>
+           <p>Humedad del suelo</p>
 
-                <article class="sensor tarjeta-panel">
-                    <div class="sensor-icono">♨</div>
-                    <p>Temperatura</p>
-                    <strong><span id="temperatura">25</span><small> °C</small></strong>
-                    <div class="barra">
-                        <div id="barraTemperatura" class="barra-valor"></div>
-                    </div>
-                    <span class="texto-secundario">Temperatura ambiental</span>
-                </article>
+           <strong>
+           <span id="humedad">42</span><small>%</small>
+           </strong>
 
-                <article class="sensor tarjeta-panel">
-                    <div class="sensor-icono">▤</div>
-                    <p>Depósito de agua</p>
-                    <strong><span id="nivelAgua">78</span><small>%</small></strong>
-                    <div class="barra">
-                        <div id="barraAgua" class="barra-valor"></div>
-                    </div>
-                    <span id="estadoAgua" class="texto-secundario">Nivel suficiente</span>
-                </article>
+           <div class="barra barra-color">
+           <div id="barraHumedad" class="barra-valor"></div>
+           </div>
+
+           <span id="estadoHumedad" class="estado-sensor">
+            Humedad adecuada
+           </span>
+           </article>
+
+
+                
+<article class="sensor tarjeta-panel">
+    <div class="sensor-icono">♨</div>
+    <p>Temperatura</p>
+
+    <strong>
+        <span id="temperatura">25</span><small> °C</small>
+    </strong>
+
+    <div class="barra barra-color">
+        <div id="barraTemperatura" class="barra-valor"></div>
+    </div>
+
+    <span id="estadoTemperatura" class="estado-sensor">
+        Temperatura normal
+    </span>
+</article>
+
+
+                
+<article class="sensor tarjeta-panel">
+    <div class="sensor-icono">▤</div>
+    <p>Depósito de agua</p>
+
+    <strong>
+        <span id="nivelAgua">78</span><small>%</small>
+    </strong>
+
+    <div class="deposito">
+        <div id="aguaVisual" class="agua-visual">
+            <div class="ola ola-uno"></div>
+            <div class="ola ola-dos"></div>
+        </div>
+
+        <span class="deposito-porcentaje" id="porcentajeDeposito">
+            78%
+        </span>
+    </div>
+
+    <div class="barra">
+        <div id="barraAgua" class="barra-valor"></div>
+    </div>
+
+    <span id="estadoAgua" class="estado-sensor">
+        Nivel suficiente
+    </span>
+</article>
+
 
                 <article class="sensor tarjeta-panel">
                     <div class="sensor-icono">◷</div>
