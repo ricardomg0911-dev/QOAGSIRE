@@ -965,3 +965,42 @@ img {
         transform: none;
     }
 }
+
+
+/* Botones de inicio y cierre de sesión */
+
+.boton-menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 1px solid #d6b46a;
+    border-radius: 6px;
+    padding: 10px 16px;
+    color: #d6b46a;
+    background: transparent;
+    transition: 0.3s ease;
+}
+
+.boton-menu:hover {
+    color: #080808;
+    background: #d6b46a;
+}
+
+/* Ocultar el botón que no corresponda */
+
+.boton-menu[hidden] {
+    display: none !important;
+}
+
+/* Ajustes para celulares */
+
+@media (max-width: 768px) {
+    #navegacion .boton-menu {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 8px;
+        text-align: center;
+    }
+}
+
