@@ -1218,3 +1218,39 @@ img {
         padding: 14px;
     }
 }
+
+.logo {
+    width: 150px;
+    height: auto;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    display: block;
+    z-index: 1000;
+    margin: 0 auto;
+}
+
+
+
+/* Barra superior de navegación */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+/* Logo QOAGSIRE */
+.logo {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0;
+    position: static;
+}
+
+/* Enlaces del menú */
+.navbar a {
+    text-decoration: none;
+    margin-left: 25px;
+}
