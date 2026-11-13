@@ -492,3 +492,107 @@ body {
         animation: none;
     }
 }
+
+
+/* APARTADOS DE SENSORES */
+
+.sensores-seccion {
+    width: 100%;
+    min-width: 0;
+    margin: 30px 0;
+    overflow: hidden;
+}
+
+.titulo-sensores h2 {
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.titulo-sensores p {
+    color: #aaaaaa;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+/* CARRUSEL */
+
+.carrusel-sensores {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 5px 2px 16px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #d6b46a #202020;
+}
+
+.tarjeta-sensor {
+    flex: 0 0 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 25px;
+    border: 1px solid #343434;
+    border-radius: 12px;
+    background: #101010;
+    scroll-snap-align: center;
+}
+
+.tarjeta-sensor span {
+    display: block;
+    color: #d6b46a;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.tarjeta-sensor strong {
+    display: block;
+    font-size: 38px;
+    color: #ffffff;
+    margin-bottom: 18px;
+}
+
+.sensor-barra {
+    width: 100%;
+    height: 9px;
+    border-radius: 20px;
+    background: #292929;
+    overflow: hidden;
+}
+
+.sensor-barra div {
+    height: 100%;
+    width: 0%;
+    background: #d6b46a;
+    border-radius: 20px;
+    transition: width 0.5s, background 0.4s;
+}
+
+.tarjeta-sensor p {
+    margin-top: 14px;
+    color: #d6b46a;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.indicacion-carrusel {
+    text-align: center;
+    color: #d6b46a;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* COMPUTADORA Y CELULAR */
+
+@media (max-width: 768px) {
+    .tarjeta-sensor {
+        padding: 22px;
+    }
+
+    .tarjeta-sensor strong {
+        font-size: 34px;
+    }
+}
