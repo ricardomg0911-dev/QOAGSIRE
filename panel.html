@@ -12,7 +12,9 @@
 <body>
 
     <header class="encabezado">
-        <a href="panel.html" class="logo">QOAG<span> SIRE</span></a>
+        <a href="panel.html" class="logo">            
+        <img src="logo.jpg" alt="Logo" width="50">
+</a>
 
         <div class="usuario-menu">
             <span class="estado-conexion">
@@ -28,7 +30,7 @@
         <section class="bienvenida">
             <div>
                 <p class="subtitulo">PANEL DE CONTROL</p>
-                <h1>Tu cultivo, bajo control</span></h1>
+                <h1>Tu cultivo, bajo control</h1>
                 <p>Administra el riego y consulta las condiciones de tu cultivo.</p>
             </div>
 
@@ -65,45 +67,130 @@
                 </button>
             </div>
 
-            <div class="sensores-grid">
-                
-           <article class="sensor tarjeta-panel">
-           <div class="sensor-icono">◉</div>
-           <p>Humedad del suelo</p>
+            <section class="sensores-seccion">
 
-           <strong>
-           <span id="humedad">42</span><small>%</small>
-           </strong>
-
-           <div class="barra barra-color">
-           <div id="barraHumedad" class="barra-valor"></div>
-           </div>
-
-           <span id="estadoHumedad" class="estado-sensor">
-            Humedad adecuada
-           </span>
-           </article>
-
-
-                
-<article class="sensor tarjeta-panel">
-    <div class="sensor-icono">♨</div>
-    <p>Temperatura</p>
-
-    <strong>
-        <span id="temperatura">25</span><small> °C</small>
-    </strong>
-
-    <div class="barra barra-color">
-        <div id="barraTemperatura" class="barra-valor"></div>
+    <div class="titulo-sensores">
+        <h2>Humedad del suelo</h2>
+        <p>Monitoreo individual de las cinco zonas de riego.</p>
     </div>
 
-    <span id="estadoTemperatura" class="estado-sensor">
-        Temperatura normal
-    </span>
-</article>
+    <div class="carrusel-sensores" id="carruselHumedad">
+
+        <article class="tarjeta-sensor">
+            <span>Sensor de humedad 1</span>
+            <strong id="humedad1">--%</strong>
+            <div class="sensor-barra">
+                <div id="barraHumedad1"></div>
+            </div>
+            <p id="estadoHumedad1">Esperando lectura...</p>
+        </article>
+
+        <article class="tarjeta-sensor">
+            <span>Sensor de humedad 2</span>
+            <strong id="humedad2">--%</strong>
+            <div class="sensor-barra">
+                <div id="barraHumedad2"></div>
+            </div>
+            <p id="estadoHumedad2">Esperando lectura...</p>
+        </article>
+
+        <article class="tarjeta-sensor">
+            <span>Sensor de humedad 3</span>
+            <strong id="humedad3">--%</strong>
+            <div class="sensor-barra">
+                <div id="barraHumedad3"></div>
+            </div>
+            <p id="estadoHumedad3">Esperando lectura...</p>
+        </article>
+
+        <article class="tarjeta-sensor">
+            <span>Sensor de humedad 4</span>
+            <strong id="humedad4">--%</strong>
+            <div class="sensor-barra">
+                <div id="barraHumedad4"></div>
+            </div>
+            <p id="estadoHumedad4">Esperando lectura...</p>
+        </article>
+
+        <article class="tarjeta-sensor">
+            <span>Sensor de humedad 5</span>
+            <strong id="humedad5">--%</strong>
+            <div class="sensor-barra">
+                <div id="barraHumedad5"></div>
+            </div>
+            <p id="estadoHumedad5">Esperando lectura...</p>
+        </article>
+
+    </div>
+
+    <p class="indicacion-carrusel">
+        ← Desliza para cambiar de sensor →
+    </p>
+
+</section>
 
 
+<section class="sensores-seccion">
+
+    <div class="titulo-sensores">
+        <h2>Temperatura ambiental</h2>
+        <p>Monitoreo individual de las cinco zonas.</p>
+    </div>
+
+    <div class="carrusel-sensores" id="carruselTemperatura">
+
+        <article class="tarjeta-sensor">
+            <span>Sensor de temperatura 1</span>
+            <strong id="temperatura1">-- °C</strong>
+            <div class="sensor-barra">
+                <div id="barraTemperatura1"></div>
+            </div>
+            <p id="estadoTemperatura1">Esperando lectura...</p>
+        </article>
+
+        <article class="tarjeta-sensor">
+            <span>Sensor de temperatura 2</span>
+            <strong id="temperatura2">-- °C</strong>
+            <div class="sensor-barra">
+                <div id="barraTemperatura2"></div>
+            </div>
+            <p id="estadoTemperatura2">Esperando lectura...</p>
+        </article>
+
+        <article class="tarjeta-sensor">
+            <span>Sensor de temperatura 3</span>
+            <strong id="temperatura3">-- °C</strong>
+            <div class="sensor-barra">
+                <div id="barraTemperatura3"></div>
+            </div>
+            <p id="estadoTemperatura3">Esperando lectura...</p>
+        </article>
+
+        <article class="tarjeta-sensor">
+            <span>Sensor de temperatura 4</span>
+            <strong id="temperatura4">-- °C</strong>
+            <div class="sensor-barra">
+                <div id="barraTemperatura4"></div>
+            </div>
+            <p id="estadoTemperatura4">Esperando lectura...</p>
+        </article>
+
+        <article class="tarjeta-sensor">
+            <span>Sensor de temperatura 5</span>
+            <strong id="temperatura5">-- °C</strong>
+            <div class="sensor-barra">
+                <div id="barraTemperatura5"></div>
+            </div>
+            <p id="estadoTemperatura5">Esperando lectura...</p>
+        </article>
+
+    </div>
+
+    <p class="indicacion-carrusel">
+        ← Desliza para cambiar de sensor →
+    </p>
+
+</section>
                 
 <article class="sensor tarjeta-panel">
     <div class="sensor-icono">▤</div>
@@ -196,7 +283,9 @@
     </main>
 
     <footer class="pie">
-        <a href="panel.html" class="logo">QOAG<span> SIRE</span></a>
+        <a href="panel.html" class="logo">
+        <img src="logo.jpg" alt="Logo" width="50">
+        </a>
         <p>Control de recursos hídricos</p>
         <a href="index.html" class="volver-arriba">Página principal ↑</a>
     </footer>
